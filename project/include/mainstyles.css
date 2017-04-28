@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  margin: 0px;
+  font-size: 15pt;
+  background-color: #D6E1E3;
+  color: white;
+  font-family: Open Sans;
+}
+
+#banner {
+  height: 100px;
+  width: 100%;
+  /*background: #83a8e2;
+  background: -webkit-linear-gradient(left, #6c7687, #ddeaff);
+  background: -o-linear-gradient(left, #6c7687, #ddeaff);
+  background: -moz-linear-gradient(left, #6c7687, #ddeaff); Gradient Background
+	background: linear-gradient(to left, #6c7687, #ddeaff); */
+  background-color: #1B273F;
+  position: fixed;
+  text-align: center;
+  font-size: 46pt;
+}
+
+#content {
+  padding-top: 100px;
+  float: left;
+  width: 80%;
+  color: #1B273F;
+}
+
+#sideBanner {
+  padding: 110px 1% 0 2%;
+  float: right;
+  background-color: #1B273F;
+  width: 17%;
+  height: 1160px;
+}
+
+#bigimage {
+  width: 60%;
+  height: auto;
+}
+
+#daypic {
+  width: 100%;
+  height: auto;
+}
+
+.bannerimage {
+  width: auto;
+  height: 100px;
+  float: left;
+}
+
+#bannerimage2 {
+  float: right;
+}
+
+#rightContent {
+  float: right;
+  width: 38%;
+  margin: 4px;
+}
+
+li {
+  padding: 5px 0;
+}
+
+#linkArea {
+  width: 60%;
+}
+
+#extralinkarea {
+  visibility: hidden;
+}
+
+.extralinks {
+  color: #1B273F;
+}
+
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+button {
+  border: none;
+}
+
+.tablebutton {
+  background-color: #1B273F;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.upcomingEvent {
+  border: 2px solid white;
+  width: 90%;
+  font-size: 13pt;
+  margin-top: 15px;
+  padding: 12% 3%;
+}
+
+.upcomingEvent > a {
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  color: white;
+}
+
+a:focus {
+  outline: none;
+}

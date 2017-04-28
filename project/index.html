@@ -1,0 +1,125 @@
+<html>
+<head>
+<script src="include/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="include/jquery-ui.js" type="text/javascript"></script>
+<link href="include/jquery-ui.css" rel="stylesheet" type="text/css"></link>
+<link href="include/mainstyles.css" rel="stylesheet" type="text/css"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+$(function() {
+  $('#extralinkbutton').on('click', function() {
+    $('#extralinkarea').css('visibility', 'visible');
+    $('#extralinkarea').dialog({
+      create: function(event, ui) {
+        $("body").css({ overflow: 'hidden' })
+      },
+      beforeClose: function(event, ui) {
+        $("body").css({ overflow: 'inherit' })
+      },
+      modal: true,
+      title: 'External Links',
+      width: 400,
+      height: 'auto',
+      buttons: [
+        {
+          text: 'Ok!',
+          click: function() {
+            $('#extralinkarea').css('visibility', 'hidden');
+            $(this).dialog('close');
+          }
+        }
+      ],
+    });
+  });
+
+  $('.redirect').on('click', function() {
+    var pageTitle = $(this).attr('data-linkto');
+    if (pageTitle == 'notneeded') {
+      return;
+    }
+    document.location.replace(pageTitle + '.html');
+  });
+
+})
+
+</script>
+</head>
+<body>
+<div id='banner'>New York<img class="bannerimage" src="include/pics/yankeesoriginal.png"><img class="bannerimage" id="bannerimage2" src="include/pics/yankeesoriginal.png"></div>
+<div id="content"><img id="bigimage" src="include/pics/bridgesunset.jpg"><div id="rightContent"><b>New York</b> is a city and state on the east coast of the United States of America.<br>
+Here's some basic facts about the city:<br>
+<ul>
+  <li>New York city is the most populous city in the whole of the USA with a 2015 population of over 8.5M!</li>
+  <li>New York city is also the USA's most densely populated city</li>
+  <li>It's been the home of many successful TV shows, such as Friends, Saturday Night Live and news providers such as CNN and Fox</li>
+  <li>It's an extremely linguistically diverse city, with its residents speaking over 800 languages</li>
+</ul>
+</div>
+<div id="linkArea">
+  <table style="margin-left: 2%;" cellpadding="11%">
+    <tr>
+      <td><button data-linkto="locations" class="tablebutton redirect" type="button"><span class="ui-icon ui-icon-check"></span>Landmarks</button></td>
+      <td style="width: 150px">
+        <button data-linkto="nymag" class="tablebutton redirect" type="button"><span class="ui-icon ui-icon-lightbulb"></span>NY Times</button>
+      </td>
+      <td colspan="2"><button data-linkto="sports" class="tablebutton redirect" type="button"><span class="ui-icon ui-icon-person"></span>Sports Teams</button></td>
+    </tr>
+    <tr>
+      <td><button data-linkto="transport" class="tablebutton redirect" type="button"><span class="ui-icon ui-icon-suitcase"></span>Subway Guide</button></td>
+      <td style="width: 150px">
+        &nbsp;
+      </td>
+      <td><button data-linkto="notneeded" class="tablebutton redirect" type="button" id="extralinkbutton"><span class="ui-icon ui-icon-extlink"></span>External Links</button></td>
+    </tr>
+  </table>
+</div>
+<img id="daypic" src="include/pics/nybackground.jpg">
+<div id="realextralinkarea">
+<a name="extralinks" class="extralinks">Other links:</a><br>
+<table cellpadding="10">
+  <tr>
+    <td><button class="tablebutton"><a target="_blank" href="https://en.wikipedia.org/wiki/New_York_City">New York City Wikipedia</a></button></td>
+    <td><button class="tablebutton"><a target="_blank" href="http://www.nycgo.com/">Official NYC Guide</a></button></td>
+    <td><button class="tablebutton"><a target="_blank" href="http://www1.nyc.gov/">NYC Government Website</a></button></td>
+    <td><button class="tablebutton"><a target="_blank" href="http://www.bbc.co.uk/weather/5128581">NYC Weather</a></button></td>
+  </tr>
+  <tr>
+    <td colspan="3"><a class="extralinks">If you have any feedback, <a class="extralinks"href="mailto:daniel@shocklogic.com">click here</a><a class="extralinks"> to email the website creator</a></a></td>
+  </tr>
+</table>
+</div>
+<div id="extralinkarea">Other links:<br>
+<table cellpadding="10">
+<tr>
+  <td><a target="_blank" href="https://en.wikipedia.org/wiki/New_York_City">New York City Wikipedia</a></td>
+  <td><a target="_blank" href="http://www.nycgo.com/">Official NYC Guide</a></td>
+  <td><a target="_blank" href="http://www1.nyc.gov/">NYC Government Website</a></td>
+  <td><a target="_blank" href="http://www.bbc.co.uk/weather/5128581">NYC Weather</a></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="sideBanner"><span style="text-decoration: underline; font-size: 19pt;">Upcoming Events</span><br><br>
+  <div class="upcomingEvent"><u>Atlantic City Boat Party</u><br><br>
+    <b>Location:</b> Gardeners Basin Marina<br><br>
+    <b>When:</b> 29th April 2017<br>
+    &emsp;<a target="_blank" align="center" href="https://nightout.com/events/booze-cruise-429-gardners-basin-marina-in-atlantic-city/tickets">Get Tickets</a>
+  </div>
+  <div class="upcomingEvent"><u>Free Guestlist Fridays</u><br><br>
+    <b>Location:</b> Harrah's Resort<br><br>
+    <b>When:</b> 5th May 2017<br>
+    &emsp;<a target="_blank" align="center" href="http://www.nyc.com/events/free_guestlist_fridays__harrahs_pool.1397354/">Get Tickets</a>
+  </div>
+  <div class="upcomingEvent"><u>Madison Reed Color Bar Opening</u><br><br>
+    <b>Location:</b> 7 West 19th Street (at 5th Ave)<br><br>
+    <b>When:</b> 7th May 2017<br>
+    &emsp;<a target="_blank" align="center" href="http://www.nyc.com/events/madison_reed_color_bar_opening.1381953/">Get Tickets</a>
+  </div>
+  <div class="upcomingEvent" style="margin-bottom: 50px"><u>New York African Diaspora International Film Festival</u><br><br>
+    <b>Location:</b> Teachers College, Columsbia University<br><br>
+    <b>When:</b> 11th May 2017<br>
+    &emsp;<a target="_blank" align="center" href="http://nyadiff.org/buy-tickets/">Get Tickets</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<script src="include/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="include/jquery-ui.js" type="text/javascript"></script>
+<link href="include/jquery-ui.css" rel="stylesheet" type="text/css"></link>
+<link href="include/mainstyles.css" rel="stylesheet" type="text/css"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+
+$(function() {
+
+  $.get('https://newsapi.org/v1/articles?source=the-new-york-times&sortBy=top&apiKey=17bc18e3dad54841abc374771ed0fbe8', function(data) {
+    console.log(data.articles);
+    var storyString = '<table width="80%">';
+    for (var i = 0; i < data.articles.length; i++) {
+      storyString += '<tr><td><img class="articlePic" src="' + data.articles[i].urlToImage + '"></td><td><a href="' + data.articles[i].url + '" target="_blank">' + data.articles[i].title + '</a></td><td style="padding-left: 5%; color: #1B273F;" colspan="2">' + data.articles[i].description + '</td></tr>';
+    }
+    storyString += '</table>';
+    $('#storiesArea').html(storyString);
+  });
+
+});
+
+</script>
+<style>
+
+#storiesArea {
+  margin-top: 4%;
+}
+
+.articlePic {
+  width: 90%;
+  height: auto;
+}
+
+#content {
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+a {
+  color: #1B273F;
+}
+
+</style>
+</head>
+<body>
+<div id='banner'>
+  <div style="height: 80%; width: auto; float: left;"><span id="goHome" style="font-size: 30;">
+    <a href="index.html" style="color: white;">
+    Home
+    </a></span></div>
+  New York Times Latest Stories<img class="bannerimage" id="bannerimage2" src="include/pics/yankeesoriginal.png"></div>
+<div id="content">The New York Times is one of the world's most famous and successful newspapers, and it originated, of course, in New York. This page contains the top 10 stories from the New York Times.<div id="storiesArea" align="center">This is where the stories go</div></div>
+</body>
+</html>
